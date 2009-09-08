@@ -1,6 +1,17 @@
-// jQuery plugin pattern inspired by Mike Alsup
-// refined by tobi oetiker
-//
+/* ********************************************************************************
+Title: jQuery Plugin Pattern
+Copyright: Tobi Oetiker <tobi@oetiker.ch>, OETIKER+PARTNER AG
+
+$Id: jquery.AddIncSearch.js 217 2009-08-25 07:52:19Z oetiker $
+
+Inspired by Mike Alsup article and the subsequent discussion on
+http://www.learningjquery.com/2007/10/a-plugin-development-pattern
+
+I have created the following template for jQuery Plugins.
+
+License: Public Domain
+
+* **********************************************************************************/
 (function($) {
     // setup a namespace for us
     var nsp = 'pluginPattern';
