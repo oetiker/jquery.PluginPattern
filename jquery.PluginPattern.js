@@ -6,8 +6,10 @@ $Id: jquery.AddIncSearch.js 217 2009-08-25 07:52:19Z oetiker $
 
 Inspired by Mike Alsup article and the subsequent discussion on
 http://www.learningjquery.com/2007/10/a-plugin-development-pattern
+This template tries to incorporate many of the points made there
+and adds a number of ideas of my own.
 
-I have created the following template for jQuery Plugins.
+See the comments in the code.
 
 License: Public Domain
 
