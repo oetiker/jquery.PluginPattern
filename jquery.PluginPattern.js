@@ -1,4 +1,4 @@
-/* ********************************************************************************
+/* *********************************************************************
 Title: jQuery Plugin Pattern
 Copyright: Tobi Oetiker <tobi@oetiker.ch>, OETIKER+PARTNER AG
 
@@ -13,7 +13,7 @@ See the comments in the code.
 
 License: Public Domain
 
-* **********************************************************************************/
+* **********************************************************************/
 (function($) {
     // setup a namespace for us
     var nsp = 'pluginPattern';
@@ -34,7 +34,9 @@ License: Public Domain
         }
     };
 
-    // Private Variables and Functions
+    // Private Variables and Functions in the _ object
+    // note that this will refer to _ unless you
+    // call using the call or apply methods
     var _ = {
         // _.varA
         varA:   'varA',
@@ -45,7 +47,7 @@ License: Public Domain
         // _.init
         init : function(){
             alert('initialized');
-        },
+        }
     };
 
     // $(x).pluginPatternActionA(....)
@@ -56,13 +58,13 @@ License: Public Domain
             opts // add options
         );
         function actionA(){
-            var meta_opts = opts;
+            var meta_opts = localOpts;
             // lets you override the options
             // inside the dom objects class property
             // requires the jQuery metadata plugin
             // <div class="hello {color: 'red'}">ddd</div>
             if ($.meta){
-                meta_opts = $.extend({}, options, $this.data());
+                meta_opts = $.extend({}, localOpts, $this.data());
             }
             // $this to access the jQuery object
             var $this = $(this);
@@ -72,7 +74,7 @@ License: Public Domain
             }
             this[nsp].contextVariable = 'bla';
             // do some work      
-            alert('called Action A on:' + $this.text())
+            alert('called Action A on:' + $this.text());
         };
         // run the action for each matching node
         return this.each(actionA);
