@@ -58,16 +58,17 @@ License: Public Domain
             opts // add options
         );
         function actionA(){
-            var meta_opts = localOpts;
+            // $this to access the jQuery object
+            var $this = $(this);
+
             // lets you override the options
             // inside the dom objects class property
             // requires the jQuery metadata plugin
             // <div class="hello {color: 'red'}">ddd</div>
+            var meta_opts = localOpts;
             if ($.meta){
                 meta_opts = $.extend({}, localOpts, $this.data());
             }
-            // $this to access the jQuery object
-            var $this = $(this);
             // per dom node context data
             if (! this[nsp]){
                 this[nsp] = {};
